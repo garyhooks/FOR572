@@ -1,6 +1,6 @@
 # TSHARK
 
-```bash
+```
 
 -r READ from file
 -n Prevent DNS lookup
