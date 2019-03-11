@@ -1,4 +1,4 @@
-# 1.2
+# Lab 1.2
 
 ### (A)
 
@@ -7,7 +7,7 @@ tshark -n -r  lab-1.2_capture.pcap -Y "http.host contains google"
 ```
 
 
-# 2.1
+# Lab 2.1
 
 ### (1A)
 
@@ -62,6 +62,15 @@ grep "MSIE 8.0" useragent_derived.log | awk -F"\t" '{ print $4 }' | sort | uniq 
 ```
 
 ### (3)
+
+-q 
+-z statistics
+-z io,phs[,filter]
+
+```
+tshark -n -C no_desegment_tcp -r 10_3_59_127.pcap -q -z io,phs
+```
+
 
 
 
