@@ -61,7 +61,7 @@ Interesting results using the following - 50 hits to /blank and /
 grep "MSIE 8.0" useragent_derived.log | awk -F"\t" '{ print $4 }' | sort | uniq -c | sort -nr | more
 ```
 
-### (3)
+### (3a)
 
 -q 
 -z statistics
@@ -72,6 +72,22 @@ tshark -n -C no_desegment_tcp -r 10_3_59_127.pcap -q -z io,phs
 ```
 
 
+### (3c)
+
+```
+tshark -n -C no_desegment_tcp -r 10_3_59_127.pcap -T fields -e frame.time -Y 'http.user_agent contains "Firefox/15.0"' | head -n 1
+```
+
+### (3d)
+
+```
+tshark -n -C no_desegment_tcp -r 10_3_59_127.pcap -T fields -e frame.time_delta_displayed -e http.request.uri -Y 'http.user_agent contains "MSIE 8.0" and http.request.uri contains "sugexp"'
+```
+
+### (3e)
+
+Not consistent with human behaviour
+It looks like it could be blackhat SEO malware strain
 
 
 
