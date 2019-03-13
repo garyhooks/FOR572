@@ -90,6 +90,45 @@ Not consistent with human behaviour
 It looks like it could be blackhat SEO malware strain
 
 
+# Lab 2.2
+
+### (1a) (1b)
+
+/etc/sysconfig/
+-- iptables
+-- iptables.conf
+
+/etc/rsyslog.d/*
+
+/etc/rsyslog.conf
+
+/var/log:
+-- boot.log
+-- dmesg
+-- 
+
+/opt/bro/*
 
 
+### (2a)
+
+iptables
+
+```
+-i  Input Interface
+-p  Layer 4 protocol - allows us to specify TCP traffic
+-d  Destination IP - which IP to observe, etc - 184.32.3.55
+--dport  Layer 4 port - e.g. 1951
+--syn  Match packegs with the Syn flag set only - effective way to control the amount of log data generated since only one packet per fonnection will meet this
+
+-j LOG  take the log action with any matched traffic.  This is non terminal 
+```
+
+##### Example
+
+```
+-A FORWARD -i enp0s8 -d 184.82.188.7/32 -p tcp -m tcp --dport 1951 --syn -j LOG --log-prefix "FW potential C2 general: "
+-A FORWARD -i enp0s9 -d 184.82.188.7/32 -p tcp -m tcp --dport 1951 --syn -j LOG --log-prefix "FW potential C2 key: "
+-A FORWARD -i enp0s10 -d 184.82.188.7/32 -p tcp -m tcp --dport 1951 --syn -j LOG --log-prefix "FW potential C2 floor: "
+```
 
