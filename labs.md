@@ -132,3 +132,29 @@ iptables
 -A FORWARD -i enp0s10 -d 184.82.188.7/32 -p tcp -m tcp --dport 1951 --syn -j LOG --log-prefix "FW potential C2 floor: "
 ```
 
+
+### (2b)
+
+```
+grep "potential C2" messages | awk '{ print $9,$13}' | sort | uniq | awk '{ print $1 }' | uniq -c
+
+
+ 10 floor:
+ 128 general:
+ 21 key:
+```
+
+### (2c)
+
+
+```
+grep "potential C2 general" messages | less
+```
+
+Chosen IP = 10.3.57.103
+
+```
+grep "potential C2" messages | grep "SRC=10.3.57.103"
+```
+
+Interval is every *20 minutes*
