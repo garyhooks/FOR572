@@ -150,11 +150,37 @@ grep "potential C2" messages | awk '{ print $9,$13}' | sort | uniq | awk '{ prin
 ```
 grep "potential C2 general" messages | less
 ```
-
 Chosen IP = 10.3.57.103
 
 ```
 grep "potential C2" messages | grep "SRC=10.3.57.103"
 ```
 
-Interval is every *20 minutes*
+#### Interval is every 20 minutes
+
+```
+grep "potential C2 key" messages | less
+```
+Chosen IP = 10.3.58.3
+
+```
+grep "potential C2" messages | grep "SRC=10.3.58.3"
+```
+
+#### Interval is every 20 minutes 
+
+
+```
+grep "potential C2 floor" messages | less
+```
+Chosen IP = 10.3.59.6
+
+```
+grep "potential C2" messages | grep "SRC=10.3.59.6"
+```
+
+#### Interval is every 10 minutes 
+
+
+
+
