@@ -183,4 +183,13 @@ grep "potential C2" messages | grep "SRC=10.3.59.6"
 
 
 
+### (3a)
+
+/opt/bro/logs/current/signatures.log - for the current hour whilst Bro is running
+/opt/bro/logs/YYYY-MM-DD/signatures.<datetime>.log.gz for the previous time window
+ 
+ ### (3b)
+ 
+zcat signatures* | bro-cut sig_id src_addr | grep ^potential-c2.*10\.3\.5[67]\. | sort | uniq | wc -l
+ 
 
