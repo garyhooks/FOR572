@@ -192,4 +192,71 @@ grep "potential C2" messages | grep "SRC=10.3.59.6"
  
 zcat signatures* | bro-cut sig_id src_addr | grep ^potential-c2.*10\.3\.5[67]\. | sort | uniq | wc -l
  
+ 
+ 
+ # Lab 2.3
+
+### (2a)
+
+Timestamp: 2013-06-08 16:32:48.000Z
+URL: http://download.taxforms.usa.gov.ccmktiejgpq.co.cc/2014_tax_schedules.pdf
+Client_IP: 10.3.59.53
+HTTP Referer: -
+HTTP User-Agent: feevil 18b
+
+### (2c)
+
+Timestamp: 2013-06-08 16:31:54.000Z
+URL: http://download.taxforms.usa.gov.ccmktiejgpq.co.cc/taxdocs.exe
+Client_IP: 10.3.59.53
+HTTP Referer: http://us-mg5.mail.yahoo.com/neo/launch?.rand=2i1degofn30rg
+HTTP User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36
+
+### (2d)
+
+Event one was a visit to the .exe URL from Yahoo.com mailbox 
+The useragent is Mozilla 5.0
+The second event was less than a minute later 
+This uses a different user agent and fetches the .pdf file 
+
+
+
+### (3a) 
+
+2 other events - both from floor2-PC 
+
+Account Name: floor1 
+Account Domain: FLOOR2-PC
+Process Name: C:\Users\floor1\AppData\Local\Temp\WZSE0.TMP\taxdocs.exe
+
+
+
+Account Name: floor1
+Account Domain: FLOOR2-PC 
+Process Name: C:\Users\floor1\Downloads\taxdocs.exe
+
+
+### (3b)
+
+Account Name: floor1 
+Account Domain: FLOOR2-PC 
+Process Name: C:\Users\floor1\AppData\Local\Temp\WZSE0.TMP\681094798543.exe
+
+
+### (4a)
+
+feevil 18c - 17 hits
+feevil 18b - 1 hit 
+
+### (5a)
+
+Hardware address - 08:00:27:df:33:6d 
+
+
+### (5e)
+
+Only URL without associated HTTP activity is:
+
+pfumqhbrowahfgk.co.cc
+
 
