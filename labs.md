@@ -281,4 +281,23 @@ pfumqhbrowahfgk.co.cc
 
 nfdump -R 2012/ -A proto,dstip,dstport -O tstart -o 'fmt:%ts %te %da %pr/%dp %pkt %byt' 'src host 10.3.58.7 and dst host in [ 199.73.28.114 12.190.135.235 ] and port 8000'
  
+
+### (2a)
+
+```
+ nfdump -R 2012/ -A srcip,dstip -O tstart 'src net 10.3.58.0/24 and dst net 10.3.58.0/24 and not host in [10.3.58.4 10.3.58.255 ]'
+ ```
+ 
+ ### (2b)
+ 
+ dont know 
+ 
+ ### (3a) 
+ 
+ ```
+ nfdump -R 2012/ -s port:p/bytes 'host 10.3.58.6 and host 10.3.58.6'
+ ```
+ 
+ ### (3b)
+ 
  
