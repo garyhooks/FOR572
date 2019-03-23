@@ -262,3 +262,23 @@ pfumqhbrowahfgk.co.cc
 
 ### (6a)
 
+
+
+ # Lab 3.2
+ 
+ ### (1a)
+ 
+ ```
+ nfdump -R 2012/ -A proto,dstip,dstport -O tstart -o 'fmt:%ts %te %da %pr/%dp %pkt %byt' 'src host 10.3.58.7 and dst host in [ 199.73.28.114 12.190.135.235 ]'
+ ```
+ 
+ ### (1b)
+ 
+ HTTP traffic on ports 80, 443.  
+ Port 8000 unsure 
+
+### (1c)
+
+nfdump -R 2012/ -A proto,dstip,dstport -O tstart -o 'fmt:%ts %te %da %pr/%dp %pkt %byt' 'src host 10.3.58.7 and dst host in [ 199.73.28.114 12.190.135.235 ] and port 8000'
+ 
+ 
