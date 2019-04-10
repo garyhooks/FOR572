@@ -301,3 +301,13 @@ nfdump -R 2012/ -A proto,dstip,dstport -O tstart -o 'fmt:%ts %te %da %pr/%dp %pk
  ### (3b)
  
  
+
+
+# Lab 4.2
+
+### (3g) 
+
+```
+tshark -n -r evidence1.pcap -Y 'ftp.request.command=="USER" || ftp.request.command=="PASS"' -T fields -e frame.number -e tcp.stream -e ftp.request.command -e ftp.request.arg
+```
+
