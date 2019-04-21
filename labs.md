@@ -311,3 +311,12 @@ nfdump -R 2012/ -A proto,dstip,dstport -O tstart -o 'fmt:%ts %te %da %pr/%dp %pk
 tshark -n -r evidence1.pcap -Y 'ftp.request.command=="USER" || ftp.request.command=="PASS"' -T fields -e frame.number -e tcp.stream -e ftp.request.command -e ftp.request.arg
 ```
 
+
+
+
+# Lab 5.1
+
+### (1a) 
+
+
+
